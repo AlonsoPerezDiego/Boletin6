@@ -26,9 +26,10 @@ public class Cuenta {
         saldo1 = Double.parseDouble(JOptionPane.showInputDialog("El saldo de la cuenta de Aquiles."));
         saldo2 = ((saldo1-(Math.pow((Math.pow(saldo1, 2))-4*1*saldo1, 1/2))/(2*1)));
         while(saldo1<=0|saldo2<=0){
+            JOptionPane.showMessageDialog(null, resultado = false);
             saldo1 = Double.parseDouble(JOptionPane.showInputDialog("El saldo de la cuenta de Aquiles."));
             saldo2 = ((saldo1-(Math.pow((Math.pow(saldo1, 2))-4*1*saldo1, 1/2))/(2*1)));
-            JOptionPane.showMessageDialog(null, resultado = false);
+            
         }
         JOptionPane.showMessageDialog(null, resultado = true);
     }
@@ -38,9 +39,10 @@ public class Cuenta {
         saldo1 = ((saldo2-(Math.pow((Math.pow(saldo2, 2))-4*1*saldo2, 1/2))/(2*1)));
         
         while(saldo1<=0|saldo2<=0){
+            JOptionPane.showMessageDialog(null, resultado = false);
             saldo2 = Double.parseDouble(JOptionPane.showInputDialog("El saldo de la cuenta de Elba."));
             saldo1 = ((saldo2-(Math.pow((Math.pow(saldo2, 2))-4*1*saldo2, 1/2))/(2*1)));
-            JOptionPane.showMessageDialog(null, resultado = false);
+            
         }
         JOptionPane.showMessageDialog(null, resultado = true);
     }
@@ -72,8 +74,9 @@ public class Cuenta {
     public void ingreso1(double ing1){
         
         while(ing1<0){
-            ing1 =  Double.parseDouble(JOptionPane.showInputDialog("Ingreso en la cuenta de Aquiles."));
             JOptionPane.showMessageDialog(null, resultado = false);
+            ing1 =  Double.parseDouble(JOptionPane.showInputDialog("Ingreso en la cuenta de Aquiles."));
+            
         }
         JOptionPane.showMessageDialog(null, "El saldo de Aquiles es de " + saldo1+ing1 + "€.");
         JOptionPane.showMessageDialog(null, resultado = true);
@@ -82,8 +85,9 @@ public class Cuenta {
     public void ingreso2(double ing2){
 
         while(ing2<0){
-            ing2 = Double.parseDouble(JOptionPane.showInputDialog("Ingreso en la cuenta de Elba."));
             JOptionPane.showMessageDialog(null, resultado = false);
+            ing2 = Double.parseDouble(JOptionPane.showInputDialog("Ingreso en la cuenta de Elba."));
+            
         }
         JOptionPane.showMessageDialog(null, "El saldo de Elba es de " + saldo2+ing2 + "€.");
         JOptionPane.showMessageDialog(null, resultado = true);
@@ -92,12 +96,14 @@ public class Cuenta {
     public void reintegro1(double rein1){
      
         while(rein1<0){
-            rein1 = Double.parseDouble(JOptionPane.showInputDialog("Reintegro en la cuenta de Aquiles."));
             JOptionPane.showMessageDialog(null, resultado = false);
+            rein1 = Double.parseDouble(JOptionPane.showInputDialog("Reintegro en la cuenta de Aquiles."));
+            
         }
         while((saldo1-rein1)<0){
-                rein1 = Double.parseDouble(JOptionPane.showInputDialog("Reintegro en la cuenta de Aquiles."));
                 JOptionPane.showMessageDialog(null, resultado = false);
+                rein1 = Double.parseDouble(JOptionPane.showInputDialog("Reintegro en la cuenta de Aquiles."));
+                
         }
         JOptionPane.showMessageDialog(null, "El saldo de Aquiles es de " + (saldo1-rein1) + "€.");
         JOptionPane.showMessageDialog(null, resultado = true);
@@ -107,12 +113,14 @@ public class Cuenta {
     public void reintegro2(double rein2){
 
         while(rein2<0){
-            rein2 = Double.parseDouble(JOptionPane.showInputDialog("Reintegro en la cuenta de Elba."));
             JOptionPane.showMessageDialog(null, resultado = false);
+            rein2 = Double.parseDouble(JOptionPane.showInputDialog("Reintegro en la cuenta de Elba."));
+            
         }
         while((saldo2-rein2)<0){
-            rein2 = Double.parseDouble(JOptionPane.showInputDialog("Reintegro en la cuenta de Elba.")); 
             JOptionPane.showMessageDialog(null, resultado = false);
+            rein2 = Double.parseDouble(JOptionPane.showInputDialog("Reintegro en la cuenta de Elba.")); 
+            
         }
         
         JOptionPane.showMessageDialog(null, "El saldo de Elba es de " + (saldo2-rein2) + "€.");
@@ -122,8 +130,9 @@ public class Cuenta {
     public void transferenciaAE(double trans){
 
         while(trans>saldo1){
-            trans = Double.parseDouble(JOptionPane.showInputDialog("Introduce la cantidad que quieres transferir de Aquiles a Elba."));
             JOptionPane.showMessageDialog(null, resultado = false);
+            trans = Double.parseDouble(JOptionPane.showInputDialog("Introduce la cantidad que quieres transferir de Aquiles a Elba."));
+            
         }
         JOptionPane.showMessageDialog(null, "Quedan " + (saldo1-trans) + "€ en la cuenta de Aquiles y " + saldo2+trans + "€ en la cuenta de Elba tras una transferencia de " + trans + "€.");
         JOptionPane.showMessageDialog(null, resultado = true);
@@ -133,8 +142,9 @@ public class Cuenta {
     public void transferenciaEA(double trans){
 
         while(trans>saldo2){
-            trans = Double.parseDouble(JOptionPane.showInputDialog("Introduce la cantidad que quieres transferir de Elba a Aquiles."));
             JOptionPane.showMessageDialog(null, resultado = false);
+            trans = Double.parseDouble(JOptionPane.showInputDialog("Introduce la cantidad que quieres transferir de Elba a Aquiles."));
+            
         }
         JOptionPane.showMessageDialog(null, "Quedan " + (saldo2-trans) + "€ en la cuenta de Elba y " + saldo1+trans + "€ en la cuenta de Aquiles tras una transferencia de " + trans + "€.");
         JOptionPane.showMessageDialog(null, resultado = true);
