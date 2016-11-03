@@ -8,7 +8,11 @@ public class Boletin61 {
         
         Cuenta oper = new Cuenta();
         int select2;
-        int select = Integer.parseInt(JOptionPane.showInputDialog("Introduce '1' para la cuenta de Aquiles. \nIntroduce '2' para la cuenta de Elba. \n Introduce '3' para no hacer nada."));
+        int select = Integer.parseInt(JOptionPane.showInputDialog("Introduce '1' para la cuenta de Aquiles. \nIntroduce '2' para la cuenta de Elba. \nIntroduce '3' para no hacer nada."));
+        while((select!=1&&select!=2)&&select!=3){
+            JOptionPane.showMessageDialog(null,"Error");
+            select = Integer.parseInt(JOptionPane.showInputDialog("Introduce '1' para la cuenta de Aquiles. \nIntroduce '2' para la cuenta de Elba. \nIntroduce '3' para no hacer nada."));
+        }
         switch(select){
             
             case 1: JOptionPane.showMessageDialog(null,"Nombre: " + oper.getNombre1() +  "\n Número de cuenta: " + oper.getnCuenta1() );
@@ -53,10 +57,7 @@ public class Boletin61 {
                     break;
                     
         }
-        while((select!=1&&select!=2)&&select!=3){
-            JOptionPane.showMessageDialog(null,"Error");
-            select = Integer.parseInt(JOptionPane.showInputDialog("Introduce '1' para la cuenta de Aquiles. \nIntroduce '2' para la cuenta de Elba. \n Introduce '3' para no hacer nada."));
-        }
+        
     }
     
 }
